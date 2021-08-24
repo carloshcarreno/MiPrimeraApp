@@ -22,8 +22,12 @@ namespace MiPrimeraApp
         private void btnAction_Click(object sender, EventArgs e)
         {
             txtName.Visible = false;
+            MessageBox.Show("");
         }
 
-
+        private void txtName_VisibleChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hola Mano");
+        }
     }
 }

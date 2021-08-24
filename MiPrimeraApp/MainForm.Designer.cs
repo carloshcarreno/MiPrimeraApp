@@ -39,6 +39,9 @@ namespace MiPrimeraApp
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.lbxList = new System.Windows.Forms.ListBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
@@ -58,6 +61,7 @@ namespace MiPrimeraApp
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(181, 22);
             this.txtName.TabIndex = 1;
+            this.txtName.VisibleChanged += new System.EventHandler(this.txtName_VisibleChanged);
             // 
             // btnAction
             // 
@@ -80,7 +84,7 @@ namespace MiPrimeraApp
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(88, 230);
+            this.radioButton1.Location = new System.Drawing.Point(25, 15);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(110, 21);
             this.radioButton1.TabIndex = 4;
@@ -91,7 +95,7 @@ namespace MiPrimeraApp
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(233, 230);
+            this.radioButton2.Location = new System.Drawing.Point(36, 42);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(110, 21);
             this.radioButton2.TabIndex = 5;
@@ -113,7 +117,7 @@ namespace MiPrimeraApp
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(275, 312);
+            this.radioButton4.Location = new System.Drawing.Point(310, 355);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(110, 21);
             this.radioButton4.TabIndex = 7;
@@ -125,17 +129,26 @@ namespace MiPrimeraApp
             // 
             this.lbxList.FormattingEnabled = true;
             this.lbxList.ItemHeight = 16;
-            this.lbxList.Location = new System.Drawing.Point(502, 12);
+            this.lbxList.Location = new System.Drawing.Point(537, 55);
             this.lbxList.Name = "lbxList";
             this.lbxList.Size = new System.Drawing.Size(214, 212);
             this.lbxList.TabIndex = 8;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(502, 274);
+            this.dateTimePicker1.Location = new System.Drawing.Point(537, 317);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Location = new System.Drawing.Point(322, 214);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 10;
             // 
             // MainForm
             // 
@@ -143,18 +156,19 @@ namespace MiPrimeraApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbxList);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnAction);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Name = "MainForm";
             this.Text = "Welcome Mano!";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +186,7 @@ namespace MiPrimeraApp
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.ListBox lbxList;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
