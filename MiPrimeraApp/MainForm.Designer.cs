@@ -35,15 +35,14 @@ namespace MiPrimeraApp
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rbtn_test = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_radios = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.rtbox_description = new System.Windows.Forms.RichTextBox();
+            this.rtbox_result = new System.Windows.Forms.RichTextBox();
             this.btnReport = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnl_radios.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
@@ -63,7 +62,7 @@ namespace MiPrimeraApp
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(181, 22);
             this.txtName.TabIndex = 1;
-            this.txtName.VisibleChanged += new System.EventHandler(this.txtName_VisibleChanged);
+            this.txtName.Click += new System.EventHandler(this.CustomEvent);
             // 
             // btnAction
             // 
@@ -78,9 +77,9 @@ namespace MiPrimeraApp
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(88, 171);
+            this.comboBox1.Location = new System.Drawing.Point(88, 146);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(181, 24);
             this.comboBox1.TabIndex = 3;
             // 
             // radioButton1
@@ -105,27 +104,17 @@ namespace MiPrimeraApp
             this.radioButton2.Text = "radioButton2";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbtn_test
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(301, 311);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(110, 21);
-            this.radioButton3.TabIndex = 6;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(301, 271);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(110, 21);
-            this.radioButton4.TabIndex = 7;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "radioButton4";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbtn_test.AutoSize = true;
+            this.rbtn_test.Location = new System.Drawing.Point(301, 311);
+            this.rbtn_test.Name = "rbtn_test";
+            this.rbtn_test.Size = new System.Drawing.Size(110, 21);
+            this.rbtn_test.TabIndex = 6;
+            this.rbtn_test.TabStop = true;
+            this.rbtn_test.Text = "radioButton3";
+            this.rbtn_test.UseVisualStyleBackColor = true;
+            this.rbtn_test.Click += new System.EventHandler(this.CustomEvent);
             // 
             // dateTimePicker1
             // 
@@ -134,31 +123,33 @@ namespace MiPrimeraApp
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 9;
             // 
-            // panel1
+            // pnl_radios
             // 
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Location = new System.Drawing.Point(310, 95);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 10;
+            this.pnl_radios.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pnl_radios.Controls.Add(this.radioButton2);
+            this.pnl_radios.Controls.Add(this.radioButton1);
+            this.pnl_radios.Location = new System.Drawing.Point(310, 95);
+            this.pnl_radios.Name = "pnl_radios";
+            this.pnl_radios.Size = new System.Drawing.Size(200, 100);
+            this.pnl_radios.TabIndex = 10;
+            this.pnl_radios.Click += new System.EventHandler(this.CustomEvent);
             // 
-            // richTextBox1
+            // rtbox_description
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(98, 214);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "";
+            this.rtbox_description.Location = new System.Drawing.Point(90, 196);
+            this.rtbox_description.Name = "rtbox_description";
+            this.rtbox_description.Size = new System.Drawing.Size(179, 96);
+            this.rtbox_description.TabIndex = 11;
+            this.rtbox_description.Text = "";
             // 
-            // richTextBox2
+            // rtbox_result
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(607, 58);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(312, 231);
-            this.richTextBox2.TabIndex = 12;
-            this.richTextBox2.Text = "sadasdasdddddddddddd asdsada dasada das dasasdd adasdasd asdasdasda dad sadasdasd" +
-    "";
+            this.rtbox_result.Location = new System.Drawing.Point(607, 58);
+            this.rtbox_result.Name = "rtbox_result";
+            this.rtbox_result.Size = new System.Drawing.Size(312, 231);
+            this.rtbox_result.TabIndex = 12;
+            this.rtbox_result.Text = "";
+            this.rtbox_result.TextChanged += new System.EventHandler(this.rtbox_result_TextChanged);
             // 
             // btnReport
             // 
@@ -168,6 +159,7 @@ namespace MiPrimeraApp
             this.btnReport.TabIndex = 13;
             this.btnReport.Text = "Reporte";
             this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.CustomEvent);
             // 
             // MainForm
             // 
@@ -176,20 +168,19 @@ namespace MiPrimeraApp
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(960, 450);
             this.Controls.Add(this.btnReport);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.rtbox_result);
+            this.Controls.Add(this.rtbox_description);
+            this.Controls.Add(this.pnl_radios);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.rbtn_test);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnAction);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Name = "MainForm";
             this.Text = "Welcome Mano!";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl_radios.ResumeLayout(false);
+            this.pnl_radios.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,13 +194,12 @@ namespace MiPrimeraApp
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rbtn_test;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_radios;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox rtbox_description;
+        private System.Windows.Forms.RichTextBox rtbox_result;
         private System.Windows.Forms.Button btnReport;
     }
 }
